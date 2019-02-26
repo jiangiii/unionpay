@@ -1,0 +1,54 @@
+html, body, div, header, footer, article，aside, nav, section, ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+.conceal {
+  display: none;
+  
+}
+
+.container {
+  margin: 50px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.payment {
+  text-align: center
+}
+
+.input-box {
+  display: block;
+  width: 110px;
+  padding: 10px 5px;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+}
+
+.btn {
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  border-color: #007bff;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  margin: 10px 0;
+}
+
+.pay-verify {
+  font-size: 14px;
+}

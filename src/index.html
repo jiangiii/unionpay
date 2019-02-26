@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>企业银联支付测试</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+</head>
+<body>
+<article class="container">
+    <section class="payment">
+        <p>企业银联支付测试</p>
+        <input class="input-box" id="amount" type="text" placeholder="金 额"/>
+        <button class="btn" onclick="pay()">企业银联支付</button>
+    </section>
+</section>
+
+<!-- 付款检测 -->
+<div class="pay-verify conceal">
+    <p class="title">付款检测</p>
+    <p>请在付款成功后点击确认</p>
+    <p><button>完成付款</button></p>
+</div>
+
+<script>
+
+    function pay() {
+
+        const YOUR_URL = 'http://127.0.0.1:3001/unionpay/payment'
+        const amount = document.getElementById('amount').value * 100 || 0;
+        const xhr = new XMLHttpRequest()
+        xhr.open("POST", YOUR_URL, true)
+        xhr.setRequestHeader("Content-type", "application/json")
+        xhr.send(JSON.stringify({
+            amount: amount
+        }));
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let _window = window.open()
+                _window.document.write(xhr.responseText)
+                _window.document.close()
+                //TODO: to do something
+            } else {
+                //TODO: to do something
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
